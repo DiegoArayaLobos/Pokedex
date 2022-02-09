@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import ListPokemon from "./components/ListPokemon";
+import background from "./assets/img/background.jpg";
+import { styled } from "@mui/system";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Background = styled("div")({
+    position: "fixed",
+    top: -50,
+    left: -50,
+    zIndex: -1,
+    zoom: "110%",
+    width: "100vw",
+    height: "100vh",
+    filter: "blur(40px)",
+    backgroundSize: "cover",
+    backgroundImage: `url(${background})`,
+    backgroundRepeat: "no-repeat",
+    
+});
+
+const App = () => {
+    return (
+        <>
+            <Background />
+            <ListPokemon />
+        </>
+    );
 }
 
 export default App;
